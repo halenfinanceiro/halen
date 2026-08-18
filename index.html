@@ -4,112 +4,71 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HALEN — Gestão Financeira Simplificada</title>
-<meta name="description" content="Organize as finanças da sua empresa, acompanhe seus números e tome decisões com mais clareza.">
+<meta name="description" content="Organize receitas e despesas, acompanhe Receita, Lucro, Caixa, Margem, Inadimplência e use o Director, Score e Insights HALEN para tomar decisões com mais clareza.">
 <style>
-:root{--navy:#16345d;--green:#22c55e;--green-dark:#188f43;--green-soft:#e9f8ef;--ink:#233f63;--muted:#62748a;--bg:#f7faf9;--line:#dce7e1}
+:root{--navy:#16345d;--navy2:#0f2949;--green:#22c55e;--green-dark:#188f43;--green-soft:#e9f8ef;--ink:#233f63;--muted:#62748a;--bg:#f7faf9;--line:#dce7e1}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}a{text-decoration:none;color:inherit}
 .container{max-width:1120px;margin:auto;padding:0 24px}
 header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
-.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-size:25px;font-weight:900;letter-spacing:.5px;color:var(--navy)}.logo span{color:var(--green)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{font-size:25px;font-weight:900;letter-spacing:.5px;color:var(--navy)}.logo span{color:var(--green)}
 .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--green);color:#fff;font-weight:900;border-radius:10px;padding:14px 20px;border:0;cursor:pointer;transition:transform .15s ease,background .15s ease}.btn:hover{background:#1eaf54;transform:translateY(-1px)}
-.hero{padding:64px 0 72px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
-.badge{display:inline-block;padding:8px 18px;border:1px solid #b9e7c8;border-radius:999px;background:var(--green-soft);color:#277a43;font-weight:800;font-size:15px}
-h1{font-size:clamp(42px,6vw,68px);line-height:1.05;margin:22px 0 20px;letter-spacing:-1.5px;color:var(--navy)}
-.lead{font-size:21px;color:var(--muted);max-width:650px}.price{font-size:46px;font-weight:900;color:var(--navy);margin:28px 0 12px}.price small{font-size:18px;font-weight:500;color:var(--muted)}
-.guarantee{margin-top:12px;color:var(--muted);font-size:17px}.cover{width:100%;max-width:560px;height:auto;display:block;margin:auto;border-radius:18px;box-shadow:0 18px 45px rgba(16,43,77,.12)}
-.section{padding:78px 0}.center{text-align:center}.section h2{font-size:clamp(34px,5vw,52px);line-height:1.12;margin:0 0 18px;color:var(--navy)}
-.section-intro{font-size:20px;color:var(--muted);max-width:800px;margin:0 auto 42px}
+.hero{padding:64px 0 72px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}.badge{display:inline-block;padding:8px 18px;border:1px solid #b9e7c8;border-radius:999px;background:var(--green-soft);color:#277a43;font-weight:800;font-size:15px}
+h1{font-size:clamp(42px,6vw,68px);line-height:1.05;margin:22px 0 20px;letter-spacing:-1.5px;color:var(--navy)}.lead{font-size:21px;color:var(--muted);max-width:650px}.price{font-size:46px;font-weight:900;color:var(--navy);margin:28px 0 12px}.price small{font-size:18px;font-weight:500;color:var(--muted)}.guarantee{margin-top:12px;color:var(--muted);font-size:17px}.cover{width:100%;max-width:560px;height:auto;display:block;margin:auto;border-radius:18px;box-shadow:0 18px 45px rgba(16,43,77,.12)}
+.section{padding:78px 0}.center{text-align:center}.section h2{font-size:clamp(34px,5vw,52px);line-height:1.12;margin:0 0 18px;color:var(--navy)}.section-intro{font-size:20px;color:var(--muted);max-width:800px;margin:0 auto 42px}
 .problem{background:#fff;border:1px solid var(--line);border-radius:18px;padding:42px}.problem h3{font-size:30px;line-height:1.2;margin:0 0 16px;color:var(--navy)}.problem p{font-size:19px;color:var(--muted);margin:0}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px 24px}
-.num{width:58px;height:58px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:var(--green-soft);color:var(--green-dark);font-weight:900;font-size:21px;margin:0 auto 22px}
-.card h3{font-size:23px;margin:0 0 10px;color:var(--navy)}.card p{margin:0;color:var(--muted);font-size:17px}
-.dark{background:var(--navy);color:#fff}.dark h2{color:#fff}.dark .section-intro{color:#dbe7f3}
-.receive{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:900px;margin:38px auto 0}.receive-item{padding:26px;border-bottom:1px solid rgba(255,255,255,.18)}
-.receive-item strong{display:block;font-size:21px;color:#fff;margin-bottom:7px}.receive-item span{color:#dbe7f3;font-size:17px}
-.receive-item strong:before{content:"✓";color:#58e88b;margin-right:12px}
-.audience{display:grid;grid-template-columns:1fr 1fr;gap:28px}.audience-box{background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px}.audience-box h3{font-size:27px;color:var(--navy);margin-top:0}
-ul.checks{list-style:none;padding:0;margin:0}ul.checks li{padding:11px 0;font-size:18px;color:var(--muted)}ul.checks li:before{content:"✓";color:var(--green-dark);font-weight:900;margin-right:10px}
-.offer{max-width:720px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:42px;text-align:center;box-shadow:0 15px 40px rgba(16,43,77,.08)}
-.offer .price{margin-top:10px}.offer .btn{width:100%;font-size:20px;padding:18px;margin-top:18px}.offer-note{color:var(--muted);margin-top:14px}
-.faq{max-width:900px;margin:40px auto 0}details{background:#fff;border:1px solid var(--line);border-radius:14px;margin:12px 0;padding:0 22px}
-summary{cursor:pointer;padding:22px 0;font-size:20px;font-weight:800;color:var(--navy)}details p{color:var(--muted);font-size:17px;padding:0 0 20px;margin:0}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px 24px}.num{width:58px;height:58px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:var(--green-soft);color:var(--green-dark);font-weight:900;font-size:21px;margin:0 auto 22px}.card h3{font-size:23px;margin:0 0 10px;color:var(--navy)}.card p{margin:0;color:var(--muted);font-size:17px}
+.dark{background:var(--navy);color:#fff}.dark h2{color:#fff}.dark .section-intro{color:#dbe7f3}.receive{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:900px;margin:38px auto 0}.receive-item{padding:26px;border-bottom:1px solid rgba(255,255,255,.18)}.receive-item strong{display:block;font-size:21px;color:#fff;margin-bottom:7px}.receive-item span{color:#dbe7f3;font-size:17px}.receive-item strong:before{content:"✓";color:#58e88b;margin-right:12px}
+.highlight{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}.highlight-box{background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px}.highlight-box h3{font-size:29px;color:var(--navy);margin:0 0 12px}.highlight-box p{font-size:18px;color:var(--muted);margin:0 0 18px}.metric-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{padding:12px 14px;background:var(--green-soft);border-radius:10px;color:#277a43;font-weight:800}.action-list{list-style:none;padding:0;margin:0}.action-list li{padding:13px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:17px}.action-list li:last-child{border-bottom:0}.action-list li:before{content:"→";color:var(--green-dark);font-weight:900;margin-right:10px}
+.score{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}.score-box{background:#fff;border:1px solid var(--line);border-radius:18px;padding:36px}.score-items{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}.score-item{padding:15px;border:1px solid var(--line);border-radius:10px;font-weight:800;color:var(--navy)}.levels{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.level{padding:8px 12px;border-radius:999px;background:var(--green-soft);color:#277a43;font-weight:800}.level.warn{background:#fff6dc;color:#8a6b00}.level.critical{background:#ffe8e8;color:#a22b2b}
+.audience{display:grid;grid-template-columns:1fr 1fr;gap:28px}.audience-box{background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px}.audience-box h3{font-size:27px;color:var(--navy);margin-top:0}ul.checks{list-style:none;padding:0;margin:0}ul.checks li{padding:11px 0;font-size:18px;color:var(--muted)}ul.checks li:before{content:"✓";color:var(--green-dark);font-weight:900;margin-right:10px}
+.offer{max-width:720px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:42px;text-align:center;box-shadow:0 15px 40px rgba(16,43,77,.08)}.offer .price{margin-top:10px}.offer .btn{width:100%;font-size:20px;padding:18px;margin-top:18px}.offer-note{color:var(--muted);margin-top:14px}.faq{max-width:900px;margin:40px auto 0}details{background:#fff;border:1px solid var(--line);border-radius:14px;margin:12px 0;padding:0 22px}summary{cursor:pointer;padding:22px 0;font-size:20px;font-weight:800;color:var(--navy)}details p{color:var(--muted);font-size:17px;padding:0 0 20px;margin:0}
 footer{padding:35px 0;text-align:center;background:#fff;border-top:1px solid var(--line);color:var(--muted)}
-@media(max-width:850px){.nav{height:68px}.nav .btn{font-size:14px;padding:12px 15px}.hero{padding:42px 0 48px}.hero-grid,.audience{grid-template-columns:1fr}.hero-grid{gap:28px}h1{font-size:47px}.lead{font-size:19px}.cards{grid-template-columns:1fr 1fr}.receive{grid-template-columns:1fr}.section{padding:56px 0}.problem{padding:30px}.cover{max-width:100%}}
-@media(max-width:520px){.container{padding:0 18px}.logo{font-size:23px}.nav .btn{font-size:12px;padding:10px 11px;white-space:nowrap}.hero{padding:34px 0 42px}h1{font-size:42px}.lead{font-size:18px}.price{font-size:42px}.price small{font-size:16px}.section h2{font-size:36px}.section-intro{font-size:18px}.cards{grid-template-columns:1fr;gap:14px}.card{padding:26px 22px}.offer{padding:30px 22px}.offer .btn{font-size:18px}.problem h3{font-size:27px}.problem p{font-size:18px}.audience-box{padding:28px 24px}}
+@media(max-width:850px){.nav{height:68px}.nav .btn{font-size:14px;padding:12px 15px}.hero{padding:42px 0 48px}.hero-grid,.audience,.highlight,.score{grid-template-columns:1fr}.hero-grid{gap:28px}h1{font-size:47px}.lead{font-size:19px}.cards{grid-template-columns:1fr 1fr}.receive{grid-template-columns:1fr}.section{padding:56px 0}.problem{padding:30px}}
+@media(max-width:520px){.container{padding:0 18px}.logo{font-size:23px}.nav .btn{font-size:12px;padding:10px 11px;white-space:nowrap}.hero{padding:34px 0 42px}h1{font-size:42px}.lead{font-size:18px}.price{font-size:42px}.price small{font-size:16px}.section h2{font-size:36px}.section-intro{font-size:18px}.cards{grid-template-columns:1fr;gap:14px}.card{padding:26px 22px}.offer{padding:30px 22px}.offer .btn{font-size:18px}.problem h3{font-size:27px}.problem p{font-size:18px}.audience-box,.highlight-box,.score-box{padding:28px 24px}.metric-list,.score-items{grid-template-columns:1fr}}
 </style>
 </head>
 <body id="topo">
 <header><div class="container nav"><a href="#topo" class="logo" aria-label="Ir para o início">HALEN<span>.</span></a><a href="#oferta" class="btn">Quero organizar minhas finanças</a></div></header>
-
 <main>
 <section class="hero"><div class="container hero-grid"><div>
 <span class="badge">GESTÃO FINANCEIRA PARA PEQUENOS NEGÓCIOS</span>
 <h1>Tenha clareza sobre o dinheiro da sua empresa.</h1>
-<p class="lead">Organize receitas e despesas, acompanhe os principais números do negócio e transforme seus dados financeiros em informações úteis para tomar decisões melhores.</p>
+<p class="lead">Organize receitas e despesas e transforme seus lançamentos em uma visão gerencial de <strong>Receita, Lucro, Caixa, Margem e Inadimplência</strong> — para tomar decisões com mais clareza.</p>
 <div class="price">R$ 47,00 <small>pagamento único</small></div>
-<a href="#oferta" class="btn">QUERO ORGANIZAR MINHAS FINANÇAS</a>
-<div class="guarantee">✓ Garantia de 30 dias</div>
+<a href="#oferta" class="btn">QUERO ORGANIZAR MINHAS FINANÇAS</a><div class="guarantee">✓ Garantia de 30 dias</div>
 </div><div><img class="cover" src="./halen_capa_github.png" alt="HALEN — Gestão Financeira Simplificada" loading="eager"></div></div></section>
 
-<section class="section"><div class="container"><div class="problem">
-<h3>Sua empresa pode estar vendendo bem — e mesmo assim você não saber quanto está realmente sobrando.</h3>
-<p>Quando receitas, despesas e resultados ficam espalhados, o empresário acaba olhando apenas para o saldo bancário. O HALEN foi criado para transformar essa rotina financeira em uma visão simples, prática e objetiva do negócio.</p>
+<section class="section"><div class="container"><div class="problem"><h3>Sua empresa pode estar vendendo bem — e mesmo assim você não saber quanto está realmente sobrando.</h3><p>Quando receitas, despesas e resultados ficam espalhados, o empresário acaba olhando apenas para o saldo bancário. O HALEN foi criado para transformar essa rotina em uma visão simples, prática e objetiva do negócio.</p></div></div></section>
+
+<section class="section"><div class="container center"><h2>Do lançamento à decisão.</h2><p class="section-intro">O HALEN organiza os dados financeiros e apresenta uma visão gerencial para você entender o que está acontecendo no negócio.</p><div class="cards">
+<div class="card"><div class="num">01</div><h3>Organize</h3><p>Registre receitas e despesas em uma estrutura centralizada e organizada.</p></div>
+<div class="card"><div class="num">02</div><h3>Acompanhe</h3><p>Veja a evolução da receita, despesas, lucro e caixa ao longo do tempo.</p></div>
+<div class="card"><div class="num">03</div><h3>Entenda</h3><p>Use o Score HALEN para identificar pontos de atenção na situação financeira.</p></div>
+<div class="card"><div class="num">04</div><h3>Aja</h3><p>Consulte os Insights e o “O que fazer hoje” para direcionar sua atenção.</p></div>
 </div></div></section>
 
-<section class="section"><div class="container center">
-<h2>O HALEN ajuda você a enxergar o que realmente importa.</h2>
-<p class="section-intro">Uma estrutura simples para organizar seus números, acompanhar a evolução financeira e tomar decisões com mais clareza.</p>
-<div class="cards">
-<div class="card"><div class="num">01</div><h3>Organize suas finanças</h3><p>Centralize receitas e despesas em uma estrutura simples e organizada.</p></div>
-<div class="card"><div class="num">02</div><h3>Acompanhe seus números</h3><p>Tenha uma visão mais clara da evolução financeira da sua empresa.</p></div>
-<div class="card"><div class="num">03</div><h3>Entenda seus resultados</h3><p>Use o Director e o Score HALEN para identificar pontos de atenção.</p></div>
-<div class="card"><div class="num">04</div><h3>Tome decisões com mais clareza</h3><p>Transforme seus dados financeiros em informações úteis para o dia a dia.</p></div>
+<section class="section dark"><div class="container"><div class="center"><h2>Veja o que o HALEN coloca na sua frente.</h2><p class="section-intro">Não é apenas uma lista de lançamentos. O Director transforma os dados em uma visão resumida do negócio.</p></div><div class="highlight">
+<div class="highlight-box"><h3>Director HALEN</h3><p>Uma visão estruturada dos principais números e da evolução financeira.</p><div class="metric-list"><div class="metric">Receita</div><div class="metric">Lucro</div><div class="metric">Caixa</div><div class="metric">Score HALEN</div><div class="metric">12 meses</div><div class="metric">Fluxo de Caixa</div><div class="metric">Despesas por categoria</div><div class="metric">Top 5 Serviços</div></div></div>
+<div class="highlight-box"><h3>Insights HALEN</h3><p>O Director destaca automaticamente situações positivas e pontos que merecem atenção.</p><ul class="action-list"><li>Receita em crescimento ou queda</li><li>Caixa positivo, zerado ou negativo</li><li>Margem saudável, adequada ou crítica</li><li>Inadimplência sob controle ou elevada</li><li>Revisão de despesas quando o comprometimento é relevante</li></ul></div>
 </div></div></section>
 
-<section class="section dark"><div class="container center">
-<h2>O que você recebe</h2><p class="section-intro">Uma estrutura prática para começar a organizar a gestão financeira do seu negócio.</p>
-<div class="receive">
+<section class="section"><div class="container"><div class="score"><div><h2>Score HALEN</h2><p class="section-intro" style="margin-left:0">Uma referência simples para enxergar a situação financeira da empresa sem precisar interpretar dezenas de números.</p><div class="score-box"><strong>O Score avalia:</strong><div class="score-items"><div class="score-item">Receita</div><div class="score-item">Caixa</div><div class="score-item">Margem</div><div class="score-item">Inadimplência</div><div class="score-item">Lucro</div></div><div class="levels"><span class="level">Excelente</span><span class="level">Saudável</span><span class="level warn">Atenção</span><span class="level critical">Crítico</span></div></div></div><div class="highlight-box"><h3>Mais clareza, menos achismo.</h3><p>O objetivo não é substituir seu contador ou criar uma estrutura financeira complexa. É ajudar você a olhar para os números certos e identificar onde precisa prestar atenção.</p><p><strong>Você lança os dados. O HALEN organiza a visão.</strong></p></div></div></div></section>
+
+<section class="section dark"><div class="container center"><h2>O que você recebe</h2><p class="section-intro">Uma estrutura prática para começar a organizar a gestão financeira do seu negócio.</p><div class="receive">
 <div class="receive-item"><strong>E-book HALEN — Gestão Financeira Simplificada</strong><span>Conteúdo para ajudar você a entender e organizar a rotina financeira do negócio.</span></div>
 <div class="receive-item"><strong>Ferramenta HALEN Financeiro</strong><span>Estrutura para organizar receitas, despesas e os principais números da empresa.</span></div>
-<div class="receive-item"><strong>Director HALEN</strong><span>Uma visão estruturada dos números para apoiar a análise e a tomada de decisões.</span></div>
-<div class="receive-item"><strong>Score HALEN</strong><span>Uma referência para identificar pontos de atenção na situação financeira.</span></div>
-<div class="receive-item"><strong>Estrutura para receitas e despesas</strong><span>Uma base prática para começar a colocar os números em ordem.</span></div>
+<div class="receive-item"><strong>Director HALEN</strong><span>Visão estruturada dos números para apoiar análise e tomada de decisões.</span></div>
+<div class="receive-item"><strong>Score HALEN</strong><span>Referência para identificar pontos de atenção na situação financeira.</span></div>
+<div class="receive-item"><strong>Estrutura para receitas e despesas</strong><span>Base prática para colocar os números em ordem.</span></div>
 <div class="receive-item"><strong>Guia rápido para começar</strong><span>Orientação objetiva para dar os primeiros passos.</span></div>
-<div class="receive-item"><strong>Checklist Financeiro Mensal</strong><span>Uma rotina simples para acompanhar a gestão financeira.</span></div>
+<div class="receive-item"><strong>Checklist Financeiro Mensal</strong><span>Rotina simples para acompanhar a gestão financeira.</span></div>
 <div class="receive-item"><strong>Materiais complementares</strong><span>Conteúdos adicionais para apoiar a organização do negócio.</span></div>
 </div></div></section>
 
-<section class="section"><div class="container">
-<div class="center"><h2>O HALEN foi feito para você se...</h2><p class="section-intro">Você não precisa ser especialista em finanças para começar a organizar os números da sua empresa.</p></div>
-<div class="audience">
-<div class="audience-box"><h3>Você provavelmente precisa do HALEN se:</h3><ul class="checks">
-<li>Tem uma pequena empresa ou negócio próprio.</li><li>Sente que o dinheiro entra, mas não sabe exatamente para onde vai.</li><li>Controla as finanças em planilhas ou anotações espalhadas.</li><li>Quer entender melhor receitas, despesas e resultados.</li><li>Precisa de uma visão financeira simples para tomar decisões.</li>
-</ul></div>
-<div class="audience-box"><h3>Você não precisa:</h3><ul class="checks">
-<li>Ser especialista em contabilidade.</li><li>Dominar indicadores financeiros.</li><li>Começar com um sistema complexo.</li><li>Ter uma estrutura financeira sofisticada.</li><li>Mudar tudo de uma vez.</li>
-</ul></div>
-</div></div></section>
+<section class="section"><div class="container"><div class="center"><h2>O HALEN foi feito para você.</h2><p class="section-intro">Você não precisa ser especialista em finanças para começar a organizar os números da sua empresa.</p></div><div class="audience"><div class="audience-box"><h3>Você provavelmente precisa do HALEN se:</h3><ul class="checks"><li>Tem uma pequena empresa ou negócio próprio.</li><li>Sente que o dinheiro entra, mas não sabe exatamente para onde vai.</li><li>Controla as finanças em planilhas ou anotações espalhadas.</li><li>Quer entender melhor receitas, despesas e resultados.</li><li>Precisa de uma visão financeira simples para tomar decisões.</li></ul></div><div class="audience-box"><h3>Você não precisa:</h3><ul class="checks"><li>Ser especialista em contabilidade.</li><li>Dominar indicadores financeiros.</li><li>Começar com um sistema complexo.</li><li>Ter uma estrutura financeira sofisticada.</li><li>Mudar tudo de uma vez.</li></ul></div></div></div></section>
 
-<section class="section" id="oferta"><div class="container"><div class="offer">
-<span class="badge">HALEN — GESTÃO FINANCEIRA SIMPLIFICADA</span>
-<h2 style="margin-top:22px">Comece hoje a organizar melhor as finanças do seu negócio.</h2>
-<div class="price">R$ 47,00</div>
-<p class="lead" style="margin:0 auto">Pagamento único · acesso aos materiais do produto</p>
-<a class="btn" href="https://pay.hotmart.com/H107211071U" rel="noopener">QUERO COMPRAR O HALEN — R$ 47</a>
-<div class="offer-note">✓ 30 dias de garantia</div>
-</div></div></section>
+<section class="section" id="oferta"><div class="container"><div class="offer"><span class="badge">HALEN — GESTÃO FINANCEIRA SIMPLIFICADA</span><h2 style="margin-top:22px">Comece hoje a organizar melhor as finanças do seu negócio.</h2><div class="price">R$ 47,00</div><p class="lead" style="margin:0 auto">Pagamento único · acesso aos materiais do produto</p><a class="btn" href="https://pay.hotmart.com/H107211071U" rel="noopener">QUERO COMPRAR O HALEN — R$ 47</a><div class="offer-note">✓ 30 dias de garantia</div></div></div></section>
 
-<section class="section"><div class="container center"><h2>Perguntas frequentes</h2><div class="faq">
-<details><summary>Para quem é o HALEN Simplificado?</summary><p>Para pequenos empresários e empreendedores que querem organizar melhor as finanças do negócio e ter uma visão mais clara dos seus números.</p></details>
-<details><summary>Preciso entender de finanças?</summary><p>Não. A proposta do HALEN é oferecer uma estrutura simples e prática para quem precisa começar a organizar e entender melhor a rotina financeira.</p></details>
-<details><summary>O que recebo após a compra?</summary><p>Você recebe acesso aos materiais e ferramentas apresentados nesta página, incluindo o E-book HALEN, a estrutura financeira, o Director, o Score e os materiais complementares.</p></details>
-<details><summary>O pagamento é único?</summary><p>Sim. O valor apresentado nesta página é de R$ 47,00 em pagamento único.</p></details>
-<details><summary>Tenho garantia?</summary><p>Sim. A oferta apresentada inclui 30 dias de garantia.</p></details>
-<details><summary>O HALEN substitui meu contador?</summary><p>Não. O HALEN é uma ferramenta de organização e acompanhamento financeiro. Ele não substitui serviços contábeis, fiscais ou profissionais especializados.</p></details>
-</div></div></section>
-</main>
-
-<footer><div class="container">HALEN · Gestão Financeira Simplificada</div></footer>
-</body>
-</html>
+<section class="section"><div class="container center"><h2>Perguntas frequentes</h2><div class="faq"><details><summary>Para quem é o HALEN Simplificado?</summary><p>Para pequenos empresários e empreendedores que querem organizar melhor as finanças do negócio e ter uma visão mais clara dos seus números.</p></details><details><summary>Preciso entender de finanças?</summary><p>Não. A proposta do HALEN é oferecer uma estrutura simples e prática para quem precisa começar a organizar e entender melhor a rotina financeira.</p></details><details><summary>O que recebo após a compra?</summary><p>Você recebe acesso aos materiais e ferramentas apresentados nesta página, incluindo o E-book HALEN, a ferramenta financeira, o Director, o Score e os materiais complementares.</p></details><details><summary>O pagamento é único?</summary><p>Sim. O valor apresentado nesta página é de R$ 47,00 em pagamento único.</p></details><details><summary>Tenho garantia?</summary><p>Sim. A oferta apresentada inclui 30 dias de garantia.</p></details><details><summary>O HALEN substitui meu contador?</summary><p>Não. O HALEN é uma ferramenta de organização e acompanhamento financeiro. Ele não substitui serviços contábeis, fiscais ou profissionais especializados.</p></details></div></div></section>
+</main><footer><div class="container">HALEN · Gestão Financeira Simplificada</div></footer>
+</body></html>
